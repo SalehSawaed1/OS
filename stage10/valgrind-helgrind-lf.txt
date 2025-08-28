@@ -1,0 +1,20 @@
+==42495== Helgrind, a thread error detector
+==42495== Copyright (C) 2007-2017, and GNU GPL'd, by OpenWorks LLP et al.
+==42495== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==42495== Command: ../stage8/server8 -p 5568 -t 4
+==42495== Parent PID: 42493
+==42495== 
+==42495== 
+==42495== Process terminating with default action of signal 15 (SIGTERM)
+==42495==    at 0x4BAED71: __futex_abstimed_wait_common64 (futex-internal.c:57)
+==42495==    by 0x4BAED71: __futex_abstimed_wait_common (futex-internal.c:87)
+==42495==    by 0x4BAED71: __futex_abstimed_wait_cancelable64 (futex-internal.c:139)
+==42495==    by 0x4BB47A2: __pthread_clockjoin_ex (pthread_join_common.c:102)
+==42495==    by 0x4850E13: ??? (in /usr/libexec/valgrind/vgpreload_helgrind-amd64-linux.so)
+==42495==    by 0x4956E32: std::thread::join() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+==42495==    by 0x10C1B7: main (server8.cpp:213)
+==42495== 
+==42495== Use --history-level=approx or =none to gain increased speed, at
+==42495== the cost of reduced accuracy of conflicting-access information
+==42495== For lists of detected and suppressed errors, rerun with: -s
+==42495== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 18 from 6)
